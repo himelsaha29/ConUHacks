@@ -19,4 +19,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+@font-face {
+  font-family: "Merienda";
+  src: local("Merienda"),   url(./fonts/custom_font.ttf) format("truetype");}
+
 </style>

@@ -15,7 +15,7 @@ var AXIOS = axios.create({
 
 //page view
 export default {
-  name: "Login",
+  name: "Function",
   data() {
     return {
       error: "",
@@ -26,12 +26,13 @@ export default {
 
   methods: {
 
-    // signup page
-    goToSignUp: function () {
+    // home page
+    logout: function () {
       Router.push({
-        path: "/signup",
-        name: "SignUpPage",
+        path: "/",
+        name: "HomePage",
       });
     },
+
   },
 };

@@ -13,8 +13,8 @@
         <input type="password" required v-model="password" placeholder="Password">
 
         <div id="button_Container">
-          <button id="button" v-bind:disabled= "!email|| !password"
-                  v-on:click="" >Login</button>
+          <button id="button" 
+                  v-on:click="enter()" >Login</button>
         </div>
         <h3></h3>
         <div >
@@ -27,7 +27,7 @@
 
 </template>
 
-<script src="./LoginPage.js" />
+<script src="./Login.js" />
 
 
 <style>

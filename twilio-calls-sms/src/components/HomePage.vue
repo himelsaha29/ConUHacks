@@ -1,18 +1,21 @@
 <template>
     <div>
 
-        <div id="logo">
-            <img src="../assets/logo.png"/>
+        <div>
+            <img src="../assets/logo.png" class="logo"/>
         </div>
 
-        <div id="loginRegister">
+        <div class="textContainer">
+            <label id="text">Message the ones you love when they need you the most</label>
 
-            <button id="button" v-on:click="goToSignUp()" >Register</button>
+            <div class="buttonContainer">
+                <b-button id="button" variant="primary" v-on:click="goToSignUp()" >Get started</b-button>
+            </div>
+        </div>
 
-            <button id="button" v-on:click="goToLogin()" >Login</button>
 
         
-        </div>
+        
 
 
 
@@ -32,23 +35,47 @@
 
 <style>
 body{
-  background: #FFFFFF;
+  background: #6bd891;
+  overflow: hidden;
 }
 
-
-#loginRegister {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    padding: 20px;
-}
 
 #button{
-  color: white;
-  border-radius: 5px;
-  background-color: #2373F7;
+  color: 31415d;
+  border-radius: 10px;
+  background-color: #6bd891;
   align-self: center;
+  position: relative;
+  cursor: pointer;
+  padding: 10px;
 
+}
+
+
+.logo {
+    height: 60%;
+    width: 60%; 
+    object-fit: cover;
+}
+
+.buttonContainer {
+    padding: 50px;
+    font-family: "Merienda";
+}
+
+.textContainer {
+    padding: 25px;
+    background: #31415d;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+#text {
+    color: white;
+    font-family: "Merienda";
+    font-size: 1.9em;
 }
 
 
