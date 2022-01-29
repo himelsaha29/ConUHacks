@@ -1,9 +1,11 @@
 <template>
-  <div id="login">
+  <div id="register">
     <div id="form__container">
 
       <form>
-        
+        <h1></h1>
+        <input type="text" required v-model="username" placeholder="Username">
+
         <!-- Email input text -->
         <h3></h3>
         <input type="email" required v-model="email" placeholder="Email">
@@ -12,13 +14,18 @@
         <h3></h3>
         <input type="password" required v-model="password" placeholder="Password">
 
+        <!-- Password input text -->
+        <h3></h3>
+        <input type="password" required v-model="confirmPass" placeholder="Confirm password">
+
+
         <div id="button_Container">
-          <button id="button" v-bind:disabled= "!email|| !password"
-                  v-on:click="" >Login</button>
+          <button id="button" v-bind:disabled= "!username|| !email|| !password|| !confirmPass"
+                  v-on:click="" >Register</button>
         </div>
         <h3></h3>
         <div >
-          <button id="button_signup" v-on:click="goToSignUp()" >Don't have an account? Create one</button>
+          <button id="button_login" v-on:click="goToLogin()" >Already have an account? Just login</button>
         </div>
       </form>
 
@@ -27,7 +34,7 @@
 
 </template>
 
-<script src="./LoginPage.js" />
+<script src="./SignUp.js" />
 
 
 <style>
@@ -82,7 +89,8 @@ form{
 
 }
 
-#button_signup{
+
+#button_login{
   color: blue;
   border: none;
   background-color: Transparent;
