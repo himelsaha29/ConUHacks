@@ -30,6 +30,10 @@ export default {
 
   created: function () {
     this.email = localStorage.getItem("savedUserEmail");
+    if((this.email).length == 0) {
+      this.home();
+    }
+
   },
 
   methods: {
@@ -60,7 +64,24 @@ export default {
 
       const email = localStorage.getItem("savedUserEmail");
       // check if email is not ''
+
+      
       console.log("To: " + to + ", " + "message: " + message + " - from " + email);
+
+      const url = "https://conuhacks-chat-6683.twil.io/send-request?From=" + email + "&To=" + to + "&Body=" + message;
+
+      AXIOS.post(url)
+        .then((response) => {
+          console.log("success");
+        })
+        .catch((e) => {
+          var errorMsg = e;
+          this.error = errorMsg;
+          console.log(errorMsg.message);
+        });
+
+
+
     }
 
   },

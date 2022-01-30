@@ -10,13 +10,14 @@
           <span id="emailId">{{email}}</span>
         </div>
         <h1></h1>
-        <input type="text" required v-model="to" placeholder="Phone number to send text to">
+        <input type="text" required v-model="to" placeholder="Phone number to send text to with country code">
 
         
         <!-- Message input text -->
         <h3></h3>
         <input type="text" required v-model="message" placeholder="Message">
 
+        <h3></h3>
 
         <div id="button_Container">
           <b-button id="button" v-bind:disabled= "!to || !message"
