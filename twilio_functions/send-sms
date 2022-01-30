@@ -1,0 +1,31 @@
+
+// This method handles requests from web applications and POST requests
+
+exports.handler = function(context, event, callback) {
+ // The pre-initialized Twilio Client is available from the `context` object
+  const twilioClient = context.getTwilioClient();
+
+  // Query parameters or values sent in a POST body
+  const from = event.From   // email address
+  const to = event.To       // phone # to send the message to
+  const body = event.Body   // message to send
+
+  // Use `messages.create` to generate a message. Be sure to chain with `then`
+  // and `catch` to properly handle the promise and call `callback` _after_ the
+  // message is sent successfully!
+  // Note the addition of the `mediaUrl` value as configuration for `messages.create`.
+  twilioClient.messages
+    .create({ body: body, from: context["TWILIO_PHONE"], to: to })
+    .then((message) => {
+      console.log('MMS successfully sent');
+      console.log(message.sid);
+
+      // Make sure to only call `callback` once everything is finished, and to pass
+      // null as the first parameter to signal successful execution.
+      return callback(null, `Success!`);
+    })
+    .catch((error) => {
+      console.error(error);
+      return callback(error);
+    });
+};
