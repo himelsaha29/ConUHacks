@@ -1,0 +1,28 @@
+
+// public API method that can be accessed by anybody 
+
+exports.handler = function(context, event, callback) {
+ // The pre-initialized Twilio Client is available from the `context` object
+  const twilioClient = context.getTwilioClient();
+
+  // Query parameters or values sent in a POST body
+  const from = event.From 
+  const to = event.To
+  const body = event.Body
+
+  // import send_sms library for when we need to send a message to a phone#
+  const send_sms_path = Runtime.getFunctions()["send-sms"].path
+  const send_sms = require(send_sms_path);
+
+  // import messaging-from-phone library for interacting with phone users
+  const phone_path = Runtime.getFunctions()["incoming-from-phone"].path
+  const phone_interaction = require(phone_path);
+
+  // check to see if the sender was a phone or a web user
+  if (!String(from).startsWith("+")) {
+    return send_sms.handler(context, event, callback);  // web user
+  }
+  else {
+    return phone_interaction.handler(context, event, callback); // phone
+  }
+};
