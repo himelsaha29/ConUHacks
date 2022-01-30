@@ -1,5 +1,7 @@
 import axios from "axios";
 import Router from "../router/index";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 
 //configuration
 var config = require("../../config");
@@ -13,6 +15,8 @@ var AXIOS = axios.create({
 });
 
 
+
+
 //page view
 export default {
   name: "SignUp",
@@ -20,6 +24,7 @@ export default {
     return {
       error: "",
       response: [],
+      error: '',
       pageTitle: "",
     };
   },
@@ -33,5 +38,25 @@ export default {
         name: "LoginPage",
       });
     },
+
+
+    create: function(email, password) {
+
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        this.goToLogin();
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage.substring(10));
+    // ..
+      this.error = errorMessage.substring(10);
+  });
+    }
+
   },
 };

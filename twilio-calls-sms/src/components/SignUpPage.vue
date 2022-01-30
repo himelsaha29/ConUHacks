@@ -3,9 +3,6 @@
     <div id="form__container">
 
       <form>
-        <h1></h1>
-        <input type="text" required v-model="username" placeholder="Username">
-
         <!-- Email input text -->
         <h3></h3>
         <input type="email" required v-model="email" placeholder="Email">
@@ -14,14 +11,15 @@
         <h3></h3>
         <input type="password" required v-model="password" placeholder="Password">
 
-        <!-- Password input text -->
-        <h3></h3>
-        <input type="password" required v-model="confirmPass" placeholder="Confirm password">
-
 
         <div id="button_Container">
-          <b-button id="button" v-bind:disabled= "!username|| !email|| !password|| !confirmPass"
-                  v-on:click="" >Register</b-button>
+          <b-button id="button" v-bind:disabled= "!email|| !password"
+                  v-on:click="create(email, password)" >Register</b-button>
+        </div>
+        <h3></h3>
+
+        <div >
+          <span v-if="error" style="color:red">{{error}} </span>
         </div>
         <h3></h3>
         <div >

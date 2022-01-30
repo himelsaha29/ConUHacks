@@ -1,5 +1,7 @@
 import axios from "axios";
 import Router from "../router/index";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+
 
 //configuration
 var config = require("../../config");
@@ -41,8 +43,22 @@ export default {
       });
     },
 
-    login() {
-      this.$auth.loginWithRedirect();
+    login: function(email, password) {
+
+      const auth = getAuth();
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        this.enter();
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorMessage.substring(10));
+    // ..
+      this.error = errorMessage.substring(10);
+  });
     }
 
   },
