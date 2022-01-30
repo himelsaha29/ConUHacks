@@ -22,9 +22,14 @@ export default {
   data() {
     return {
       error: "",
+      email: "",
       response: [],
       pageTitle: "",
     };
+  },
+
+  created: function () {
+    this.email = localStorage.getItem("savedUserEmail");
   },
 
   methods: {

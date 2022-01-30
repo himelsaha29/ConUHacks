@@ -6,8 +6,9 @@
 
         <!-- Email input text -->
         <h3></h3>
-        <input type="email" required v-model="email" placeholder="Email">
-
+        <div >
+          <span id="emailId">{{email}}</span>
+        </div>
         <h1></h1>
         <input type="text" required v-model="to" placeholder="Phone number to send text to">
 
@@ -73,6 +74,10 @@ form{
   padding: 20px;
 }
 
+#button {
+  font-family: "Merienda";
+}
+
 #form__container{
   background-color: #6bd891;
   align-items: center;
@@ -81,6 +86,11 @@ form{
   margin-top: 100px;
 }
 
+#emailId {
+  color: white;
+  font-family: "Merienda";
+
+}
 
 
 </style>
