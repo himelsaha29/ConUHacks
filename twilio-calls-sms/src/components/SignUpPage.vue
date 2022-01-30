@@ -20,12 +20,12 @@
 
 
         <div id="button_Container">
-          <button id="button" v-bind:disabled= "!username|| !email|| !password|| !confirmPass"
-                  v-on:click="" >Register</button>
+          <b-button id="button" v-bind:disabled= "!username|| !email|| !password|| !confirmPass"
+                  v-on:click="" >Register</b-button>
         </div>
         <h3></h3>
         <div >
-          <button id="button_login" v-on:click="goToLogin()" >Already have an account? Just login</button>
+          <button variant="primary"id="button_login" v-on:click="goToLogin()" >Already have an account? Just login</button>
         </div>
       </form>
 
@@ -39,11 +39,11 @@
 
 <style>
 body{
-  background: #F6F6F6;
+  background: #6bd891;
 }
 
 #form__container{
-  background-color: #F6F6F6;
+  background-color: #6bd891;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -51,23 +51,15 @@ body{
 }
 
 form{
+  background-color: #31415d;
   width: 30%;
   height: 50%;
   display: flex;
+  border: none;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid lightgray;
 }
 
-#createAccount__button{
-  color: blue;
-  background-color: Transparent;
-  background-repeat:no-repeat;
-  border: none;
-  cursor:pointer;
-  overflow: hidden;
-  outline:none;
-}
 
 #forgotPassword__button{
   background-color: Transparent;
@@ -86,16 +78,18 @@ form{
   border-radius: 5px;
   background-color: #2373F7;
   align-self: center;
+  font-family: "Merienda";
 
 }
 
 
 #button_login{
-  color: blue;
+  color: white;
   border: none;
   background-color: Transparent;
   align-self: center;
   cursor: pointer;
+  font-family: "Merienda";
 
 }
 

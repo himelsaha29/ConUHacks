@@ -18,8 +18,8 @@
 
 
         <div id="button_Container">
-          <button id="button" v-bind:disabled= "!to || !message"
-                  v-on:click="" >Send Text</button>
+          <b-button id="button" v-bind:disabled= "!to || !message"
+                  v-on:click="" >Send Text</b-button>
         </div>
         
       </form>
@@ -27,7 +27,7 @@
       <div id="loginRegister">
 
 
-            <button id="button" v-on:click="logout()" >Logout</button>
+            <b-button id="button" v-on:click="logout()" >Logout</b-button>
 
         
         </div>
@@ -46,7 +46,7 @@
 
 <style>
 body{
-  background: #F6F6F6;
+  background: #6bd891;
 }
 
 
@@ -57,8 +57,18 @@ body{
     padding: 20px;
 }
 
+form{
+  width: 30%;
+  height: 50%;
+  display: flex;
+  border-radius: 5px;
+  border: none;
+  flex-direction: column;
+  padding: 20px;
+}
+
 #form__container{
-  background-color: #F6F6F6;
+  background-color: #6bd891;
   align-items: center;
   display: flex;
   flex-direction: column;

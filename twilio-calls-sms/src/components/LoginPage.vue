@@ -13,8 +13,7 @@
         <input type="password" required v-model="password" placeholder="Password">
 
         <div id="button_Container">
-          <button id="button" 
-                  v-on:click="enter()" >Login</button>
+          <b-button id="button" v-if="!$auth.isAuthenticated" @click="login" >Login</b-button>
         </div>
         <h3></h3>
         <div >
@@ -32,11 +31,11 @@
 
 <style>
 body{
-  background: #F6F6F6;
+  background: #6bd891;
 }
 
 #form__container{
-  background-color: #F6F6F6;
+  background-color: #6bd891;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -47,9 +46,9 @@ form{
   width: 30%;
   height: 50%;
   display: flex;
+  border-radius: 5px;
   flex-direction: column;
   padding: 20px;
-  border: 1px solid lightgray;
 }
 
 #createAccount__button{
@@ -83,8 +82,9 @@ form{
 }
 
 #button_signup{
-  color: blue;
+  color: white;
   border: none;
+  font-family: "Merienda";
   background-color: Transparent;
   align-self: center;
   cursor: pointer;
@@ -92,7 +92,7 @@ form{
 }
 
 label {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Merienda";
   font-size: 16px;
   margin-top: 8px;
 }

@@ -40,5 +40,10 @@ export default {
         name: "FunctionPage",
       });
     },
+
+    login() {
+      this.$auth.loginWithRedirect();
+    }
+
   },
 };
