@@ -19,7 +19,7 @@
 
         <div id="button_Container">
           <b-button id="button" v-bind:disabled= "!to || !message"
-                  v-on:click="" >Send Text</b-button>
+                  v-on:click="sendText(to, message)" >Send Text</b-button>
         </div>
 
         <h3></h3>

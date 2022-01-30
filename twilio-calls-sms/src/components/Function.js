@@ -44,10 +44,18 @@ export default {
       // Sign-out successful.
         this.home();
         this.error = '';
+        localStorage.setItem("savedUserEmail", "");
       }).catch((error) => {
       // An error happened.
         this.error = error.message.substring(10);
       });
+    },
+
+    sendText: function(to, message) {
+
+      const email = localStorage.getItem("savedUserEmail");
+      // check if email is not ''
+      console.log("To: " + to + ", " + "message: " + message + " - from " + email);
     }
 
   },

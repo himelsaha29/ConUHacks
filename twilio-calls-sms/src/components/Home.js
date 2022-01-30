@@ -13,6 +13,7 @@ var AXIOS = axios.create({
 });
 
 
+
 //page view
 export default {
   name: "Home",

@@ -51,6 +51,7 @@ export default {
         .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
+        localStorage.setItem("savedUserEmail", email);
         this.enter();
         this.error = '';
     })

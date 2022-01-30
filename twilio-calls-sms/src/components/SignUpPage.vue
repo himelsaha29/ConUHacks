@@ -10,17 +10,17 @@
         <!-- Password input text -->
         <h3></h3>
         <input type="password" required v-model="password" placeholder="Password">
-
+        <h3></h3>
+        <div >
+          <span v-if="error" style="color:red">{{error}} </span>
+        </div>
+        <h3></h3>
 
         <div id="button_Container">
           <b-button id="button" v-bind:disabled= "!email|| !password"
                   v-on:click="create(email, password)" >Register</b-button>
         </div>
-        <h3></h3>
-
-        <div >
-          <span v-if="error" style="color:red">{{error}} </span>
-        </div>
+      
         <h3></h3>
         <div >
           <button variant="primary"id="button_login" v-on:click="goToLogin()" >Already have an account? Just login</button>

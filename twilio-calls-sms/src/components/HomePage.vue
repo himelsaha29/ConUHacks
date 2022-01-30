@@ -1,8 +1,13 @@
 <template>
     <div>
 
+
         <div>
             <img src="../assets/logo.png" class="logo"/>
+        </div>
+
+        <div >
+            <img src="../assets/voyce.png" class="icon"/>
         </div>
 
         <div class="textContainer">
@@ -49,6 +54,15 @@ body{
   cursor: pointer;
   padding: 10px;
 
+}
+
+.icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 10vw;
+    height: auto;
+    margin-top: 10px;
 }
 
 
