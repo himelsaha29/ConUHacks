@@ -1,5 +1,8 @@
 import axios from "axios";
 import Router from "../router/index";
+import { getAuth, signOut } from "firebase/auth";
+
+
 
 //configuration
 var config = require("../../config");
@@ -27,12 +30,25 @@ export default {
   methods: {
 
     // home page
-    logout: function () {
+    home: function () {
       Router.push({
         path: "/",
         name: "HomePage",
       });
     },
+
+    logout: function() {
+
+      const auth = getAuth();
+      signOut(auth).then(() => {
+      // Sign-out successful.
+        this.home();
+        this.error = '';
+      }).catch((error) => {
+      // An error happened.
+        this.error = error.message.substring(10);
+      });
+    }
 
   },
 };

@@ -48,6 +48,7 @@ export default {
         // Signed in 
         const user = userCredential.user;
         this.goToLogin();
+        this.error = '';
     })
     .catch((error) => {
       const errorCode = error.code;

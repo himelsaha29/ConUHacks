@@ -3,6 +3,7 @@ import Router from "../router/index";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 
+
 //configuration
 var config = require("../../config");
 var frontendUrl = "http://" + config.dev.host + ":" + config.dev.port;
@@ -51,6 +52,7 @@ export default {
         // Signed in 
         const user = userCredential.user;
         this.enter();
+        this.error = '';
     })
     .catch((error) => {
       const errorCode = error.code;

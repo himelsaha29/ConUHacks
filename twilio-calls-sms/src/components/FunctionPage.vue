@@ -21,6 +21,12 @@
           <b-button id="button" v-bind:disabled= "!to || !message"
                   v-on:click="" >Send Text</b-button>
         </div>
+
+        <h3></h3>
+        <div >
+          <span v-if="error" style="color:red">{{error}} </span>
+        </div>
+
         
       </form>
 
